@@ -1,0 +1,34 @@
+//part a
+public static int totalLetters(List<String> wordList) {
+  int x = 0;
+  for (String word : wordList) {
+    x += word.length();
+  }
+  return x;
+}
+
+//part b
+public static int basicGapWidth(List<String> wordList, int formattedLen) {
+  int x = wordList.size() - 1;
+  int y = formattedLen - totalLetters(wordList);
+  return spaces / gaps;
+}
+
+//part c
+public static String format(List<String> wordList, int formatttedLen) {
+  int w = basicGapWidth(wordList, formattedLen);
+  int lr = leftoverSpaces(wordList, formattedLen);
+  String f = "";
+  for (int i = 0; i < wordList.size() - 1; i++) {
+    f += wordList.size();
+    for (int j = 1; j <= w; j++) {
+      f += " ";
+    }
+    if (lr > 0) {
+      f += " ";
+      lr--;
+    }
+  }
+  f += wordList.get(wordList.size() - 1);
+  return f;
+}
